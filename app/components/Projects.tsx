@@ -6,7 +6,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = [
+type Project = {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  tags: string[];
+  url: string;
+  hasLink: boolean;
+  year: string;
+  category: string;
+  featured: boolean;
+  demoUrl?: string;
+  demoLabel?: string;
+  comingSoon?: boolean;
+};
+
+const projects: Project[] = [
   {
     id: "01",
     title: "Parque Tempisque",
