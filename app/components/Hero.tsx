@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Fragment } from "react";
 import gsap from "gsap";
 
 export default function Hero() {
@@ -40,8 +40,8 @@ export default function Hero() {
         tl.from(
           nameChars,
           {
-            y: 120,
-            rotationX: -90,
+            yPercent: 120,
+            opacity: 0,
             stagger: 0.03,
             duration: 1,
           },
@@ -103,8 +103,8 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  // Split name into characters
-  const name = "DEV_ MAURICIO";
+  // Name split into words — each word stays intact and only wraps between words.
+  const words = "DEV_ MAURICIO".split(" ");
 
   return (
     <section
@@ -120,10 +120,10 @@ export default function Hero() {
       {/* Vertical accent line */}
       <div
         ref={lineRef}
-        className="absolute left-8 md:left-16 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary to-transparent"
+        className="absolute left-6 sm:left-10 md:left-24 lg:left-32 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary to-transparent"
       />
 
-      <div className="max-w-7xl mx-auto px-8 md:px-16 py-20 w-full relative z-10 min-h-screen flex flex-col justify-between">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-24 lg:px-32 py-10 md:py-20 w-full relative z-10 min-h-screen flex flex-col justify-between">
         {/* Top section - Status, Name, Description */}
         <div className="pt-24 md:pt-32">
           {/* Status */}
@@ -142,14 +142,20 @@ export default function Hero() {
           {/* Name - Large display */}
           <h1
             ref={nameRef}
-            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none pb-1"
-            style={{ perspective: "1000px" }}
+            className="text-[clamp(1.9rem,7vw,6rem)] font-black tracking-tighter leading-[0.95] pb-1"
           >
             <span className="block">
-              {name.split("").map((char, i) => (
-                <span key={i} className="char inline-block">
-                  {char}
-                </span>
+              {words.map((word, wi) => (
+                <Fragment key={wi}>
+                  {wi > 0 && " "}
+                  <span className="inline-block whitespace-nowrap">
+                    {word.split("").map((char, ci) => (
+                      <span key={ci} className="char inline-block">
+                        {char}
+                      </span>
+                    ))}
+                  </span>
+                </Fragment>
               ))}
             </span>
           </h1>
@@ -169,7 +175,7 @@ export default function Hero() {
           {/* Description */}
           <p
             ref={descRef}
-            className="text-lg md:text-xl text-muted max-w-2xl leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-muted max-w-2xl leading-relaxed ml-6 sm:ml-12 md:ml-20"
           >
             Desarrollador que encuentra en el código la forma de materializar ideas.
             Profesional en Informática Empresarial aplicando conocimientos en soluciones reales.

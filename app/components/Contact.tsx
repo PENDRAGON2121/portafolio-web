@@ -129,7 +129,7 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="min-h-screen relative py-32 px-8 md:px-16 overflow-hidden flex items-center"
+      className="min-h-screen relative py-20 md:py-32 px-6 sm:px-8 md:px-16 overflow-hidden flex items-center"
     >
       {/* Background */}
       <div className="absolute inset-0 dot-pattern opacity-20" />
@@ -143,7 +143,7 @@ export default function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Big CTA text */}
           <div ref={headerRef}>
             <div className="overflow-hidden">

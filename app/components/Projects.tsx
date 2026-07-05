@@ -25,6 +25,30 @@ type Project = {
 const projects: Project[] = [
   {
     id: "01",
+    title: "Sistema de Reservas - Parque Tempisque",
+    subtitle: "Plataforma de Reservas para Coworking",
+    description:
+      "Sistema full-stack de reservas y membresías para el coworking de Parque Tempisque. Recolecté los requerimientos, diseñé la arquitectura y lideré el desarrollo junto a 2 pasantes. Reservas con control de concurrencia (advisory locks), membresías con consumo, pricing con IVA, facturación, correos transaccionales, auditoría, i18n y panel administrativo; CI/CD con GitHub Actions y despliegue con Docker.",
+    tags: [
+      "NestJS",
+      "PostgreSQL",
+      "TypeORM",
+      "React 19",
+      "TanStack Query",
+      "shadcn/ui",
+      "Docker",
+      "CI/CD",
+    ],
+    url: "",
+    hasLink: false,
+    demoUrl: "https://booking.parquetempisque.com/",
+    demoLabel: "Ver en vivo",
+    year: "2026",
+    category: "Full Stack · Liderazgo",
+    featured: true,
+  },
+  {
+    id: "02",
     title: "Parque Tempisque",
     subtitle: "Sitio Web Corporativo",
     description:
@@ -37,7 +61,33 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: "02",
+    id: "03",
+    title: "GLPI ITSM",
+    subtitle: "Gestión de Activos y Mesa de Servicio",
+    description:
+      "Implementación y configuración de GLPI (open-source) como plataforma central de TI en Parque Tempisque: inventario de activos, mesa de servicio, gestión de tickets e incidencias y flujos de soporte.",
+    tags: ["GLPI", "ITSM", "Help Desk", "Inventario TI", "Open Source"],
+    url: "",
+    hasLink: false,
+    year: "2026",
+    category: "Implementación TI",
+    featured: true,
+  },
+  {
+    id: "04",
+    title: "ATLAS CMMS",
+    subtitle: "Gestión de Mantenimiento",
+    description:
+      "Despliegue y configuración de ATLAS CMMS (open-source) para la gestión de mantenimiento: órdenes de trabajo, mantenimiento preventivo, control de activos e inventario de repuestos.",
+    tags: ["ATLAS CMMS", "Mantenimiento", "Órdenes de Trabajo", "Preventivo", "Open Source"],
+    url: "",
+    hasLink: false,
+    year: "2026",
+    category: "Implementación",
+    featured: true,
+  },
+  {
+    id: "05",
     title: "Nebula Assets",
     subtitle: "IT Asset Management + RBAC",
     description:
@@ -57,7 +107,7 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: "03",
+    id: "06",
     title: "Nebula Tickets",
     subtitle: "Mesa de ayuda integrada",
     description:
@@ -77,7 +127,7 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: "04",
+    id: "07",
     title: "Inventory Manager",
     subtitle: "Sistema de Gestión Empresarial",
     description:
@@ -90,7 +140,7 @@ const projects: Project[] = [
     featured: false,
   },
   {
-    id: "05",
+    id: "08",
     title: "Student Enrollment",
     subtitle: "API de Gestión Académica",
     description:
@@ -103,7 +153,7 @@ const projects: Project[] = [
     featured: false,
   },
   {
-    id: "06",
+    id: "09",
     title: "Parking Control",
     subtitle: "Sistema de Control Vehicular",
     description:
@@ -177,7 +227,7 @@ export default function Projects() {
     <section
       ref={sectionRef}
       id="projects"
-      className="min-h-screen relative py-32 px-8 md:px-16 overflow-hidden"
+      className="min-h-screen relative py-20 md:py-32 px-6 sm:px-8 md:px-16 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 dot-pattern opacity-20" />
@@ -193,7 +243,7 @@ export default function Projects() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div ref={headerRef} className="mb-20">
+        <div ref={headerRef} className="mb-12 md:mb-20">
           <span className="header-line block text-sm font-mono text-primary tracking-widest uppercase mb-4">
             / Proyectos Destacados
           </span>
@@ -334,7 +384,7 @@ export default function Projects() {
                           </svg>
                         </div>
                       </div>
-                    ) : (
+                    ) : project.demoUrl ? null : (
                       <div className="flex items-center gap-3 text-muted">
                         <span className="text-sm font-medium">Proyecto interno</span>
                         <div className="w-12 h-12 border border-border flex items-center justify-center">

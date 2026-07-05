@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const skillCategories = [
   {
     title: "Lenguajes",
-    skills: ["Java", "C#", "Python", "JavaScript"],
+    skills: ["Java", "C#", "Python", "JavaScript", "TypeScript"],
   },
   {
     title: "Frameworks",
@@ -21,7 +21,7 @@ const skillCategories = [
   },
   {
     title: "Herramientas",
-    skills: ["WordPress", "Elementor Pro", "Git", "GitHub", "VS Code"],
+    skills: ["WordPress", "Elementor Pro", "Git", "GitHub", "VS Code", "GLPI", "ATLAS CMMS"],
   },
 ];
 
@@ -137,7 +137,7 @@ export default function Skills() {
     <section
       ref={sectionRef}
       id="skills"
-      className="min-h-screen relative py-32 px-8 md:px-16 overflow-hidden"
+      className="min-h-screen relative py-20 md:py-32 px-6 sm:px-8 md:px-16 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 grid-bg opacity-40" />
@@ -153,7 +153,7 @@ export default function Skills() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <span className="block text-sm font-mono text-primary tracking-widest uppercase mb-4">
             / Habilidades Técnicas
           </span>
@@ -166,7 +166,7 @@ export default function Skills() {
         </div>
 
         {/* Main content grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left - Skills categories */}
           <div className="space-y-6">
             <p className="text-muted text-lg mb-8 max-w-md">
@@ -207,11 +207,11 @@ export default function Skills() {
             <div className="absolute -top-10 -right-10 w-40 h-40 border border-primary/10 rounded-full" />
             <div className="absolute -bottom-10 -left-10 w-24 h-24 border border-accent/10 rounded-full" />
 
-            <div className="grid grid-cols-3 gap-4 p-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 p-2 sm:p-8">
               {techStack.map((tech) => (
                 <div
                   key={tech.name}
-                  className="tech-item group relative p-5 border border-border bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:bg-card/80 transition-all duration-300 cursor-default text-center"
+                  className="tech-item group relative p-3 sm:p-5 border border-border bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:bg-card/80 transition-all duration-300 cursor-default text-center overflow-hidden"
                 >
                   <span className="text-primary mb-2 block flex justify-center">{tech.icon}</span>
                   <span className="text-xs font-medium text-muted group-hover:text-primary transition-colors">
@@ -243,10 +243,10 @@ export default function Skills() {
         {/* Bottom stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { value: "4", label: "Lenguajes" },
+            { value: "5", label: "Lenguajes" },
             { value: "5", label: "Frameworks" },
             { value: "6", label: "Databases" },
-            { value: "5", label: "Herramientas" },
+            { value: "7", label: "Herramientas" },
           ].map((stat) => (
             <div key={stat.label} className="text-center group">
               <div className="text-4xl md:text-5xl font-black gradient-text mb-2 group-hover:scale-110 transition-transform">

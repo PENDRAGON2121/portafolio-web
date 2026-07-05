@@ -6,9 +6,9 @@ const experience = [
   {
     id: "01",
     type: "work",
-    title: "Asistente de Tecnología Integral",
+    title: "Asistente de Tecnología Integral · Desarrollador & Help Desk",
     subtitle: "Parque Tempisque",
-    description: "Desarrollo web con WordPress y Elementor Pro, implementación de sistemas internos con Next.js y MongoDB, soporte a usuarios, análisis de TI, gestión de Microsoft Tenant y SharePoint, y administración de proyectos de software.",
+    description: "Desarrollo de sistemas internos full-stack (Next.js, MongoDB), sitio web corporativo bilingüe (WordPress/Elementor Pro/WPML), implementación de plataformas open-source GLPI (ITSM) y ATLAS CMMS (mantenimiento), help desk de TI y administración de Microsoft 365 (Tenant y SharePoint).",
     status: "Actual",
     year: "Ene 2026 - Presente",
   },
@@ -31,15 +31,19 @@ const education = [
     subtitle: "Liceo de Bebedero",
     description: "Educación secundaria completa con enfoque en ciencias y matemáticas.",
     status: "Completado",
-    year: "2021",
+    year: "2020",
   },
 ];
 
 const certifications = [
+  { name: "Introduction to Universal AI", org: "MITx · MIT", year: "2026" },
+  { name: "Microsoft Learn Student Ambassador", org: "Microsoft", year: "2023" },
+  { name: "Claude 101", org: "Anthropic", year: "2026" },
+  { name: "Foundational C#", org: "freeCodeCamp", year: "2025" },
   { name: "Python Essentials 1", org: "Cisco", year: "2023" },
-  { name: "Basic Conversational English", org: "IPEC", year: "2022" },
-  { name: "Youth Leadership", org: "FOD", year: "2022" },
-  { name: "Self-Leadership", org: "UCR", year: "2023" },
+  { name: "Self-Leadership", org: "UCR", year: "2022" },
+  { name: "Youth Leadership", org: "FOD", year: "2019" },
+  { name: "Basic Conversational English", org: "IPEC", year: "2019" },
 ];
 
 export default function Education() {
@@ -49,7 +53,7 @@ export default function Education() {
     <section
       ref={sectionRef}
       id="education"
-      className="min-h-screen relative py-32 px-8 md:px-16 overflow-hidden"
+      className="min-h-screen relative py-20 md:py-32 px-6 sm:px-8 md:px-16 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 grid-bg opacity-30" />
@@ -65,7 +69,7 @@ export default function Education() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <span className="block text-sm font-mono text-primary tracking-widest uppercase mb-4">
             / Experiencia & Educación
           </span>
@@ -126,7 +130,7 @@ export default function Education() {
         </div>
 
         {/* Two column layout */}
-        <div className="grid lg:grid-cols-12 gap-16">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Education Timeline - Left */}
           <div className="lg:col-span-7 relative">
             <h3 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
@@ -216,11 +220,11 @@ export default function Education() {
               <div className="mt-8 p-6 border border-border bg-card/30">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
-                    <div className="text-3xl font-black gradient-text">4</div>
+                    <div className="text-3xl font-black gradient-text">8</div>
                     <div className="text-xs text-muted font-mono uppercase">Certificados</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-black gradient-text">3</div>
+                    <div className="text-3xl font-black gradient-text">8</div>
                     <div className="text-xs text-muted font-mono uppercase">Instituciones</div>
                   </div>
                 </div>

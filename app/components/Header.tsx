@@ -2,9 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-gsap.registerPlugin(ScrollToPlugin);
+import { smoothScrollTo } from "../lib/lenis";
 
 const navLinks = [
   { name: "Inicio", href: "#hero", number: "01" },
@@ -53,16 +51,8 @@ export default function Header() {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const id = href.replace("#", "");
-    const element = document.getElementById(id);
-    if (element) {
-      gsap.to(window, {
-        duration: 1.2,
-        scrollTo: { y: element, offsetY: 0 },
-        ease: "power3.inOut",
-      });
-      setIsMobileMenuOpen(false);
-    }
+    smoothScrollTo(href);
+    setIsMobileMenuOpen(false);
   };
 
   return (

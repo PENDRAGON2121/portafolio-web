@@ -3,9 +3,9 @@
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { smoothScrollTo } from "../lib/lenis";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 const sections = [
   { id: "hero", label: "Inicio", number: "01" },
@@ -73,14 +73,7 @@ export default function ScrollIndicator() {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      gsap.to(window, {
-        duration: 1.2,
-        scrollTo: { y: element, offsetY: 0 },
-        ease: "power3.inOut",
-      });
-    }
+    smoothScrollTo(id);
   };
 
   const activeIndex = sections.findIndex((s) => s.id === activeSection);
@@ -121,7 +114,7 @@ export default function ScrollIndicator() {
 
         {/* Section dots */}
         <div className="flex flex-col justify-between h-48">
-          {sections.map((section, index) => (
+          {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}

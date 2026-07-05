@@ -80,7 +80,7 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="min-h-screen relative py-32 px-8 md:px-16 overflow-hidden"
+      className="min-h-screen relative py-20 md:py-32 px-6 sm:px-8 md:px-16 overflow-hidden"
     >
       {/* Background elements */}
       <div className="absolute inset-0 dot-pattern opacity-30" />
@@ -95,7 +95,7 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Asymmetric layout */}
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left column - Title and intro */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <div className="mb-8">
@@ -190,11 +190,12 @@ export default function About() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-foreground">Asistente de Tecnología Integral</h3>
-                  <p className="text-primary font-medium">Parque Tempisque</p>
+                  <p className="text-primary font-medium">Parque Tempisque · Desarrollador &amp; Help Desk</p>
                   <p className="text-sm text-muted mt-1 font-mono">Enero 2026 - Presente</p>
                   <p className="text-muted mt-3 text-sm leading-relaxed">
-                    Desarrollo web, implementación de sistemas internos, soporte tecnológico
-                    y gestión de proyectos de software para el parque empresarial y tecnológico.
+                    Desarrollo full-stack de sistemas internos, sitio web corporativo,
+                    implementación de GLPI y ATLAS CMMS, help desk de TI y administración
+                    de Microsoft 365 para el parque empresarial y tecnológico.
                   </p>
                 </div>
               </div>
@@ -223,13 +224,13 @@ export default function About() {
             {/* Stats row */}
             <div className="flex flex-wrap gap-12 pt-8 border-t border-border">
               <div className="space-y-1">
-                <span className="text-5xl font-black gradient-text">6+</span>
+                <span className="text-5xl font-black gradient-text">8+</span>
                 <p className="text-sm text-muted font-mono uppercase tracking-wider">
                   Proyectos
                 </p>
               </div>
               <div className="space-y-1">
-                <span className="text-5xl font-black gradient-text">4</span>
+                <span className="text-5xl font-black gradient-text">8</span>
                 <p className="text-sm text-muted font-mono uppercase tracking-wider">
                   Certificaciones
                 </p>
