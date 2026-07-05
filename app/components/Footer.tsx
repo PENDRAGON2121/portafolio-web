@@ -2,6 +2,7 @@
 
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import ProfileImage from "./ProfileImage";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -80,11 +81,7 @@ export default function Footer() {
               onClick={(e) => scrollToSection(e, "#hero")}
               className="group flex items-center gap-3 mb-6"
             >
-              <div className="w-12 h-12 border border-primary flex items-center justify-center group-hover:bg-primary transition-all duration-300">
-                <span className="text-primary font-black text-xl group-hover:text-background transition-colors">
-                  M
-                </span>
-              </div>
+              <ProfileImage size="sm" />
               <div>
                 <span className="block text-lg font-bold text-foreground">Mauricio Quirós</span>
                 <span className="block text-sm text-muted font-mono">Full-Stack Developer</span>

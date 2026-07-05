@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { smoothScrollTo } from "../lib/lenis";
+import ProfileImage from "./ProfileImage";
 
 const navLinks = [
   { name: "Inicio", href: "#hero", number: "01" },
@@ -71,13 +72,7 @@ export default function Header() {
             onClick={(e) => scrollToSection(e, "#hero")}
             className="group flex items-center gap-3"
           >
-            <div className="w-10 h-10 flex items-center justify-center">
-              <img 
-                src="/pendragon.ico" 
-                alt="Logo" 
-                className="w-8 h-8 group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
+            <ProfileImage size="sm" className="group-hover:scale-110 transition-transform duration-300" />
             <div className="hidden sm:block">
               <span className="block text-sm font-bold text-foreground">Mauricio</span>
               <span className="block text-xs text-muted font-mono">Developer</span>
