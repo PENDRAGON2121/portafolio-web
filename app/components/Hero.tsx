@@ -144,7 +144,7 @@ export default function Hero() {
               {/* Name - Large display */}
               <h1
                 ref={nameRef}
-                className="text-[clamp(1.9rem,7vw,6rem)] font-black tracking-tighter leading-[0.95] pb-1"
+                className="text-[clamp(1.9rem,5vw,3.5rem)] font-black tracking-tighter leading-[0.95] pb-1 whitespace-nowrap"
               >
                 <span className="block">
                   {words.map((word, wi) => (
